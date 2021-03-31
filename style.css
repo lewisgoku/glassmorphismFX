@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap");
+/* DEFAULT STYLES */
+:root {
+	--bg: rgb(35, 36, 42);
+	--clrPri: #1585a2;
+	/* --clrSec:
+	--clrAccent: */
+	--wht: #ffffff;
+	--wht-mid: #e6e6e6;
+	--grey-lgr: #cccccc;
+	--grey-mid: #666666;
+	--grey-hvy: #333333;
+	--blk: #1a1a1a;
+}
+
+*,
+*::before,
+*::after,
+html {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Poppins", sans-serif;
+	background: var(--bg);
+	font-size: 1rem;
+	color: var(--wht-mid);
+	line-height: 1.5;
+	outline: none;
+}
+
+a {
+	text-decoration: none;
+	cursor: pointer;
+	color: var(--wht-mid);
+}
+
+ul {
+	list-style: none;
+}
+
+img {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+}
+
+/* CUSTOM STYLES OR PROJECT STYLES HERE*/
+.container {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+		url("https://images.unsplash.com/photo-1617118658610-916b54a8c334?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80")
+			no-repeat center center/cover;
+	width: 100%;
+	height: 100vh;
+	z-index: -1;
+}
+
+.card {
+	border: 0.7em solid var(--grey-mid);
+	width: 700px;
+	height: auto;
+	padding: 4em 3em;
+	/* BLUR BACKGROUND STYLE */
+	background: rgba(35, 36, 42, 0.7);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	/* ENDS HERE */
+	animation: pluse1 5s ease-in-out infinite alternate,
+		pluse2 5s ease-in infinite alternate;
+}
+
+@keyframes pluse1 {
+	0% {
+		transform: translateY(100px);
+	}
+}
+
+@keyframes pluse2 {
+	100% {
+		transform: translateY(-100px);
+	}
+}
+
+.card .card-title {
+	font-size: 3rem;
+	font-weight: 900;
+}
+
+.card .card-subtitle {
+	font-size: 1.7rem;
+	font-weight: 600;
+}
+
+.card .card-msg {
+	letter-spacing: 0.14em;
+	margin-top: 1em;
+}
